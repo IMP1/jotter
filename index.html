@@ -1,0 +1,79 @@
+<!-- Child Layouts:
+
+# Tree
+Like a git branching history, horizontal lines that can branch and reunite. Each node on the branch is a standard fully-functional node. You can set the colours of nodes.
+
+# Board
+Like a trello/kanban board, vertical lists arranged horizontally
+
+# Folder (default)
+Like a google docs folder, children are arranged as files
+
+-->
+
+<!-- Schema:
+# Node
+id: uuid
+author: uuid
+name: short descriptive title
+body: markdown++ (note?) contents, can have pictures and links, and it all.
+child-layout: uuid
+parent: uuid, nullable
+colour: hex string
+
+# Tag
+id: uuid
+name: 
+
+# NodeTag
+node: uuid
+tag: uuid
+
+# User
+id: uuid
+name: username
+
+-->
+
+<!-- Notes:
+Checkout Google Drive API/SDK? Maybe this could live as a google drive app?
+
+  * https://developers.google.com/drive/api/v3/about-sdk
+  * https://developers.google.com/drive/api/v3/quickstart/js
+  * https://github.com/gsuitedevs/browser-samples
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="layout_folder.css">
+    <link rel="stylesheet" type="text/css" href="layout_tree.css">
+    <link rel="stylesheet" type="text/css" href="layout_board.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <!-- <script src="http://wzrd.in/standalone/uuid%2Fv4@latest"></script> -->
+    <script src="cors.js"></script>
+</head>
+<body>
+    <main>
+        <article id="note-container">
+            <header>
+                <nav>
+                    <a class="button note-parent"><i class="fa fa-level-up"></i> <span>Mir</span></a>
+                </nav>
+                <h1 class="note-title" contenteditable="true"></h1>
+            </header>
+        </article>
+    </main>
+    <script type="text/javascript" src="layout_folder.js"></script>
+    <script type="text/javascript" src="layout_tree.js"></script>
+    <script type="text/javascript" src="layout_board.js"></script>
+    <script type="text/javascript" src="func.js"></script>
+</body>
+</html>
