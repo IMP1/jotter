@@ -45,7 +45,7 @@ function setup_note(node_id, node_data) {
     note_container.appendChild(body);
 
     document.getElementById("note-container").classList.add(LAYOUT_CLASSES[node.child_layout]);
-    LAYOUT_FUNCTIONS[node.child_layout](node, note_container);
+    LAYOUT_FUNCTIONS[node.child_layout](node, note_container, node_data);
 }
 
 function main() {

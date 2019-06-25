@@ -1,7 +1,7 @@
-function setup_folder(node, list_element) {
+function setup_folder(node, list_element, node_data) {
 
     for (i = 0; i < node.children.length; i ++) {
-        let child_node = NODE_DATA[node.children[i]];
+        let child_node = node_data[node.children[i]];
 
         let item = document.createElement("li");
 
@@ -28,11 +28,11 @@ function setup_folder(node, list_element) {
     }
 }
 
-function setup_folder_container(node, container) {
+function setup_folder_container(node, container, node_data) {
     let folder = document.createElement("ul");
     folder.classList.add("note-children");
 
-    setup_folder(node, folder);
+    setup_folder(node, folder, node_data);
 
     container.appendChild(folder);
 

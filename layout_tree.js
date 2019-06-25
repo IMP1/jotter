@@ -1,4 +1,4 @@
-function setup_tree(node, tree_element) {
+function setup_tree(node, tree_element, node_data) {
     let node_children = []; // TODO: get from model somehow.
 
     // TODO: work out which nodes follow which nodes.
@@ -104,7 +104,7 @@ function setup_tree_tooltip(svg) {
     }
 }
 
-function setup_tree_container(node, container) {
+function setup_tree_container(node, container, node_data) {
     let svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     svg.setAttribute("width", "1000");
