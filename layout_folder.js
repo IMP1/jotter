@@ -1,17 +1,6 @@
-/*
-
-actions
-
-    <div class="">
-        <button class="" title="Share" >delete</button>
-        <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
-    </div>
-
-*/
-
-function setup_folder(node, list_element) {
+function setup_folder(node, list_element, node_data) {
     for (i = 0; i < node.children.length; i ++) {
-        let child_node = NODE_DATA[node.children[i]];
+        let child_node = node_data[node.children[i]];
 
         let card = document.createElement("div");
         card.classList.add("mdc-card", "col", "s16", "m4", "l3", "blue-grey");
@@ -106,9 +95,11 @@ function setup_folder(node, list_element) {
     }
 }
 
-function setup_folder_container(node, container) {
+function setup_folder_container(node, container, node_data) {
     let folder = document.createElement("div");
     folder.classList.add("note-children", "row");
-    setup_folder(node, folder);
+
+    setup_folder(node, folder, node_data);
+
     container.appendChild(folder);
 }

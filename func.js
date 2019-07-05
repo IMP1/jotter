@@ -68,20 +68,11 @@ const LAYOUT_DATA = {
 
 let SVGNS = "http://www.w3.org/2000/svg";
 
-function setup_note(node_id) {
+function setup_note(node_id, node_data) {
 
     let url = 'https://raw.githubusercontent.com/quiet324/LiangYouRadioResource201701/73a321ba86867a920f295a19f3162e1ae4306d0b/node/operate/cc_songs_names.json';
 
-    // make_cors_request(url,
-        // function(text) {
-            // let obj = JSON.parse(text);
-            // console.log(obj);
-        // },
-        // function() {
-            // console.log("An error occured when trying to access the following URL: " + url);
-        // },
-    // );
-    let node = NODE_DATA[node_id]; // TODO: get from model using node_id
+    let node = node_data[node_id]; // TODO: get from model using node_id
 
     const LAYOUT_CLASSES = [null, "folder-container", "tree-container", "board-container"];
     const LAYOUT_FUNCTIONS = [null, setup_folder_container, setup_tree_container, setup_board_container];
@@ -112,13 +103,25 @@ function setup_note(node_id) {
     note_container.appendChild(body);
 
     document.getElementById("note-container").classList.add(LAYOUT_CLASSES[node.child_layout]);
-    LAYOUT_FUNCTIONS[node.child_layout](node, note_container);
+    LAYOUT_FUNCTIONS[node.child_layout](node, note_container, node_data);
 }
 
-let url = new URL(window.location.href);
-let note_id = parseInt(url.searchParams.get("note"));
-setup_note(note_id);
+function main() {
+    let url = new URL(window.location.href);
+    let note_id = parseInt(url.searchParams.get("note"));
+
+    make_cors_request("example_data.json", "application/json",
+        function(text) {
+            let node_data = JSON.parse(text);
+            setup_note(note_id, node_data);
+        },
+        function() {
+            console.log("An error occured when trying to access the following URL: " + url);
+        },
+    );
+}
 
 $(document).ready(function(){
+    main();
     $('.fixed-action-btn').floatingActionButton();
 });

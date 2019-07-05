@@ -1,0 +1,92 @@
+{
+    "1": {
+        "id": "1",
+        "author": 1,
+        "name": "Mir Worldbuilding",
+        "body": "Worldbuilding for fun! Realistic world, no magic, too much focus on gyres.",
+        "child_layout": 1,
+        "parent": null,
+        "children": ["5", "6", "7"],
+        "colour": "#FFF"
+    },
+    "5": {
+        "id": "5",
+        "author": 1,
+        "name": "Cool Ideas",
+        "body": "Possibly plot points, or arc ideas.",
+        "child_layout": 3,
+        "parent": "1",
+        "children": [],
+        "colour": "#FFF"
+    },
+    "6": {
+        "id": "6",
+        "author": 1,
+        "name": "Key Plot Points",
+        "body": "Main decisions to be made by the party.",
+        "child_layout": 2,
+        "parent": "1",
+        "children": ["8", "9", "10", "11", "12"],
+        "colour": "#FFF"
+    },
+    "7": {
+        "id": "7",
+        "author": 1,
+        "name": "Plot Overview",
+        "body": "The general overview of the plot. Lorem ipsum blah de blah.",
+        "child_layout": 1,
+        "parent": "1",
+        "children": [],
+        "colour": "#FFF"
+    },
+    "8": {
+        "id": "8",
+        "author": 1,
+        "name": "The Voyage",
+        "body": "A ship travelling from X to Y is carrying cargo and noble passengers, and is nearing the end of a long voyage.",
+        "child_layout": 1,
+        "parent": "7",
+        "children": [],
+        "colour": "#444"
+    },
+    "9": {
+        "id": "9",
+        "author": 1,
+        "name": "The Mutiny",
+        "body": "The crew, angered by a long trip with a pompous captain, decide they've had enough.",
+        "child_layout": 1,
+        "parent": "7",
+        "children": [],
+        "colour": "#444"
+    },
+    "10": {
+        "id": "10",
+        "author": 1,
+        "name": "For the Crew",
+        "body": "The party decide to side with the crew, and are forced to take the princess prisoner.",
+        "child_layout": 1,
+        "parent": "7",
+        "children": [],
+        "colour": "#444"
+    },
+    "11": {
+        "id": "11",
+        "author": 1,
+        "name": "For the Realm",
+        "body": "The party decide to side with the captain and help them and the royal entourage defeat the crew.",
+        "child_layout": 1,
+        "parent": "7",
+        "children": [],
+        "colour": "#444"
+    },
+    "12": {
+        "id": "12",
+        "author": 1,
+        "name": "The Storm",
+        "body": "The ship is struck by a voilent storm and is wrecked onto the rocks along the coast. The party is marooned along with the royalty.",
+        "child_layout": 1,
+        "parent": "7",
+        "children": [],
+        "colour": "#444"
+    }
+}

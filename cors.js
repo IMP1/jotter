@@ -1,7 +1,7 @@
-
 // Create the XHR object.
-function create_cors_request(method, url) {
+function create_cors_request(method, url, mime_type) {
     var xhr = new XMLHttpRequest();
+    xhr.overrideMimeType(mime_type);
     if ("withCredentials" in xhr) {
         // XHR for Chrome/Firefox/Opera/Safari.
         xhr.open(method, url, true);
@@ -16,26 +16,19 @@ function create_cors_request(method, url) {
     return xhr;
 }
 
-// Make the actual CORS request.
-function make_cors_request(url, onsuccess, onfailure) {
-    // This is a sample server that supports CORS.
-    
-
-    var xhr = create_cors_request('GET', url);
+function make_cors_request(url, mime_type, onsuccess, onfailure) {
+    var xhr = create_cors_request('GET', url, mime_type);
     if (!xhr) {
         onfailure();
         return;
     }
-
     // Response handlers.
     xhr.onload = function() {
         var text = xhr.responseText;
         onsuccess(text);
     };
-
     xhr.onerror = function() {
         onfailure();
     };
-
     xhr.send();
 }
