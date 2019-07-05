@@ -44,12 +44,40 @@ Checkout Google Drive API/SDK? Maybe this could live as a google drive app?
 
 -->
 
+<!-- Credits
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+https://www.flaticon.com/free-icon/quill_234628
+
+https://www.flaticon.com/free-icon/quill_183337
+-->
+
+
+<!-- TODO:
+
+Switch from Materialize to Material.io if possible. Use both in conjunction?
+https://materializecss.com/about.html
+https://material-components.github.io/material-components-web-catalog
+https://material.io/develop/web/
+https://material.io/develop/web/components/animation/
+
+ -->
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Jotter</title>
+
+
+    <link rel="icon" type="image/svg+xml" href="https://image.flaticon.com/icons/svg/183/183337.svg">
+    <link rel="icon" type="image/png" href="https://image.flaticon.com/icons/png/512/183/183337.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- ICONS: https://material.io/tools/icons/?style=baseline -->
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="layout_folder.css">
     <link rel="stylesheet" type="text/css" href="layout_tree.css">
@@ -57,19 +85,53 @@ Checkout Google Drive API/SDK? Maybe this could live as a google drive app?
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
-    <!-- <script src="http://wzrd.in/standalone/uuid%2Fv4@latest"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="cors.js"></script>
+
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="nav-wrapper primary-colour">
+                <a href="#!" class="brand-logo"><img class="btn-floating btn-large waves-effect waves-light logo" src="https://image.flaticon.com/icons/png/512/183/183337.png">Jotter</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href=""><i class="material-icons mirror-horizontal" aria-label="View All Projects" title="View All Projects">exit_to_app</i></a></li>
+                    <li><a href=""><i class="material-icons" aria-label="New Project" title="New Project">library_add</i></a></li>
+                    <li><a href=""><i class="material-icons" aria-label="Open Project" title="Open Project">folder_open</i></a></li>
+                    <li><a href=""><i class="material-icons" aria-label="Export Project" title="Export Project">save_alt</i></a></li>
+                    <li><a href=""><i class="material-icons" aria-label="Help" title="Help">help</i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="project-breadcrumbs">
+            <div class="nav-wrapper primary-colour">
+                <div class="col s12">
+                    <a href="#!" class="breadcrumb">First</a>
+                    <a href="#!" class="breadcrumb">Second</a>
+                    <a href="#!" class="breadcrumb">Third</a>
+                </div>
+            </div>
+        </nav>
+    </header>
     <main>
         <article id="note-container">
             <header>
-                <nav>
-                    <a class="button note-parent"><i class="fa fa-level-up"></i> <span>Mir</span></a>
-                </nav>
+                <a class="waves-effect waves-light btn primary-colour note-parent"><i class="material-icons">add_box</i> <span>Mir</span></a>
                 <h1 class="note-title" contenteditable="true"></h1>
             </header>
         </article>
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large primary-colour">
+                <i class="large material-icons" aria-label="Edit Note" title="Edit Note">mode_edit</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating complementary-colour"><i class="material-icons" aria-label="Change Child Layout" title="Change Child Layout">vertical_split</i></a></li>
+                <li><a class="btn-floating analogous-color-1"><i class="material-icons" aria-label="Change Content Layout" title="Change Content Layout">compare</i></a></li>
+                <li><a class="btn-floating triadic-colour"><i class="material-icons" aria-label="Create Child Note" title="Create Child Note">add</i></a></li>
+            </ul>
+        </div>
     </main>
     <script type="text/javascript" src="layout_folder.js"></script>
     <script type="text/javascript" src="layout_tree.js"></script>

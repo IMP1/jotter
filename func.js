@@ -5,8 +5,9 @@ const NODE_DATA = {
         name: "Mir Worldbuilding",
         body: "Worldbuilding for fun! Realistic world, no magic, too much focus on gyres.",
         child_layout: 1,
+        content_layout: "markdown",
         parent: null,
-        children: ["5", "6", "7"],
+        children: ["5", "6", "7", "8"],
         colour: "#FFF"
     },
     "5": {
@@ -15,6 +16,7 @@ const NODE_DATA = {
         name: "Cool Ideas",
         body: "The general overview of the plot. Lorem ipsum blah de blah.",
         child_layout: 3,
+        content_layout: "markdown",
         parent: "1",
         children: [],
         colour: "#FFF"
@@ -25,6 +27,7 @@ const NODE_DATA = {
         name: "Key Plot Points",
         body: "The general overview of the plot. Lorem ipsum blah de blah.",
         child_layout: 2,
+        content_layout: "markdown",
         parent: "1",
         children: [],
         colour: "#FFF"
@@ -35,8 +38,20 @@ const NODE_DATA = {
         name: "Plot Overview",
         body: "The general overview of the plot. Lorem ipsum blah de blah.",
         child_layout: 1,
+        content_layout: "markdown",
         parent: "1",
-        children: ["8", "9", "10", "11", "12"],
+        children: [],
+        colour: "#FFF"
+    },
+    "8": {
+        id: "8",
+        author: 1,
+        name: "Characters",
+        body: "The main NPCs of note across Mir.",
+        child_layout: 1,
+        content_layout: "markdown",
+        parent: "1",
+        children: ["9", "10", "11"],
         colour: "#FFF"
     },
 };
@@ -75,13 +90,13 @@ function setup_note(node_id) {
     if (node.parent !== null) {
         parent_link.setAttribute("href", "?note=" + node.parent);
         parent_link.getElementsByTagName("span")[0].textContent = NODE_DATA[node.parent].name;
-        parent_link.getElementsByTagName("i")[0].classList.remove("fa-sign-out", "fa-flip-horizontal");
-        parent_link.getElementsByTagName("i")[0].classList.add("fa-level-up");
+        parent_link.getElementsByTagName("i")[0].textContent = "subdirectory_arrow_left";
+        parent_link.getElementsByTagName("i")[0].classList.add("rotate-90");
     } else {
         parent_link.setAttribute("href", ""); // TODO: go to list of projects
         parent_link.getElementsByTagName("span")[0].textContent = "All Projects";
-        parent_link.getElementsByTagName("i")[0].classList.remove("fa-level-up");
-        parent_link.getElementsByTagName("i")[0].classList.add("fa-sign-out", "fa-flip-horizontal");
+        parent_link.getElementsByTagName("i")[0].textContent = "exit_to_app";
+        parent_link.getElementsByTagName("i")[0].classList.add("mirror-horizontal");
     }
 
     let title = document.getElementsByClassName("note-title")[0];
@@ -103,3 +118,7 @@ function setup_note(node_id) {
 let url = new URL(window.location.href);
 let note_id = parseInt(url.searchParams.get("note"));
 setup_note(note_id);
+
+$(document).ready(function(){
+    $('.fixed-action-btn').floatingActionButton();
+});

@@ -9,18 +9,17 @@ grey2   #444444
 black   #000000
 */
 
-@import url("https://fonts.googleapis.com/css?family=Lora");
-@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap');
+
+* {
+    box-sizing: border-box;
+}
 
 html, body {
     background-color: #fff0cd;
     color: #444;
     font-family: 'Muli', sans-serif;
     font-size: 0.9rem;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,45 +37,8 @@ h1 {
     border: 1px solid transparent;
 }
 
-*[contenteditable="true"] {
-    outline: none;
-}
-
-*[contenteditable="true"]:hover {
-    box-shadow: inset 0 1px 2px 0 #888;
-}
-
-*[contenteditable="true"]:focus {
-    cursor: text;
-    border: 1px solid #888888;
-    background-color: #fff;
-}
-
-*[contenteditable="true"]::before {
-    font-family: "FontAwesome"; 
-    font-weight: 400; 
-    content: "\f040";
-    transform: scaleX(-1);
-    width: 1rem;
-    margin-right: 0.2rem;
-    margin-left: 0.2rem;
-}
-
-*[contenteditable="true"]:focus::before {
-    content: '';
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
 main {
     padding: 1rem;
-}
-
-html, body, main, article {
-    height: 100%;
 }
 
 article > header {
@@ -106,45 +68,144 @@ article > header {
     height: 65%;
 }
 
+.mirror-horizontal {
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
 
-button,
-a.button {
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    /*height: 1.5em;*/
+.rotate-90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+
+/* Additions/Tweaks to Materialize & material.io */
+
+img.logo {
+    width: 1em;
+    height: 1em;
+    margin-left: 1rem;
+    margin-right: 1rem;
     line-height: 1em;
-    margin: 1px;
-    padding: 0.5em 1em 0.5em 1em;
-    color: #444;
+    vertical-align: top;
+    margin-top: 4px;
 }
 
-button.tab,
-a.button.tab {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+nav .brand-logo {
+    font-family: 'Tangerine', cursive;
+    font-size: 4rem;
 }
 
-button,
-a.button {
+.folder-container li .icon {
+    margin-right: 0.5rem;
+}
+
+.card.small {
+    height: 160px;
+}
+
+/* Editable Content */
+
+*[contenteditable="true"] {
+    outline: none;
+}
+
+*[contenteditable="true"]:hover {
+    box-shadow: inset 0 1px 2px 0 #888;
+}
+
+*[contenteditable="true"]:focus {
+    cursor: text;
+    border: 1px solid #888888;
     background-color: #fff;
-    box-shadow: inset 0px -1px 1px 2px rgba(0,0,0,0.5);
 }
 
-button.toggle.down,
-a.button.toggle.down {
-    background-color: #ddd;
-    box-shadow: inset 0px 1px 1px 2px rgba(0,0,0,0.5);
+*[contenteditable="true"]::before {
+    font-family: "FontAwesome"; 
+    font-weight: 400; 
+    content: "\f040";
+    transform: scaleX(-1);
+    width: 1rem;
+    margin-right: 0.2rem;
+    margin-left: 0.2rem;
 }
 
-button:active,
-a.button:active,
-button.toggle:active,
-a.button.toggle:active{
-    background-color: #ddd;
-    box-shadow: inset 0px 1px 1px 2px rgba(0,0,0,0.5), inset 0px 1px 6px 2px rgba(0,0,0,0.4);
+*[contenteditable="true"]:focus::before {
+    content: '';
+}
+
+.note-card-icons {
+    display: inline-block;
+    margin-right: 0.2rem;
+    vertical-align: middle;
+}
+
+.note-card-title {
+    display: inline-block;
+    margin-top: auto;
+}
+
+.mdc-card {
+    margin: 16px;
+}
+/* Colours */
+/*
+See here for a pallete generator: https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+Base it on the primary colour.
+*/
+
+.primary-colour {
+    background-color: #607d8b;
+}
+
+.complementary-colour {
+    background-color: #8b6e60;
+}
+
+.analogous-color-1 {
+    background-color: #608b84;
+}
+
+.analogous-color-2 {
+    background-color: #60678b;
+}
+
+.triadic-colour {
+    background-color: #8b607d;
+}
+
+a.primary-colour:hover,
+.btn.primary-colour:hover,
+button.primary-colour:hover {
+    background-color: #546e7a;
+}
+
+a.complementary-colour:hover,
+.btn.complementary-colour:hover,
+button.complementary-colour:hover {
+    background-color: #775644;
+}
+
+a.analogous-color-1:hover,
+.btn.analogous-color-1:hover,
+button.analogous-color-1:hover {
+    background-color: #597b74;
+}
+
+a.analogous-color-2:hover,
+.btn.analogous-color-2:hover,
+button.analogous-color-2:hover {
+    background-color: #474e7a;
+}
+
+a.triadic-colour:hover,
+.btn.triadic-colour:hover,
+button.triadic-colour:hover {
+    background-color: #774e69;
 }
