@@ -2,8 +2,11 @@ function setup_folder(node, list_element, node_data) {
     for (i = 0; i < node.children.length; i ++) {
         let child_node = node_data[node.children[i]];
 
+        let card_container = document.createElement("div");
+        card_container.classList.add("card-container", "col", "s12", "m4", "l3");
+
         let card = document.createElement("div");
-        card.classList.add("mdc-card", "col", "s16", "m4", "l3", "blue-grey");
+        card.classList.add("mdc-card", "blue-grey");
 
         let content = document.createElement("a");
         content.setAttribute("href", "?note=" + child_node.id);
@@ -51,7 +54,7 @@ function setup_folder(node, list_element, node_data) {
         content.appendChild(header);
 
         let body = document.createElement("div");
-        body.classList.add("demo-card__secondary", "mdc-typography", "mdc-typography--body2", "white-text");
+        body.classList.add("flow-text", "demo-card__secondary", "mdc-typography", "mdc-typography--body2", "white-text");
         body.textContent = child_node.body;
         content.appendChild(body);
 
@@ -91,7 +94,8 @@ function setup_folder(node, list_element, node_data) {
         actions.appendChild(action_icons);
         card.appendChild(actions);
 
-        list_element.appendChild(card);
+        card_container.appendChild(card);
+        list_element.appendChild(card_container);
     }
 }
 

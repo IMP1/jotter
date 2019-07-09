@@ -50,6 +50,7 @@ article > header {
     padding-bottom: 0.5rem;
     vertical-align: middle;
     line-height: 1rem;
+    margin: 16px;
 }
 
 .note-body {
@@ -60,6 +61,7 @@ article > header {
     resize: vertical;
     overflow-y: auto;
     z-index: 1;
+    margin: 16px;
     margin-bottom: 1rem;
 }
 
@@ -102,12 +104,12 @@ nav .brand-logo {
     font-size: 4rem;
 }
 
-.folder-container li .icon {
-    margin-right: 0.5rem;
+.nav-wrapper {
+    min-height: 64px;
 }
 
-.card.small {
-    height: 160px;
+.folder-container li .icon {
+    margin-right: 0.5rem;
 }
 
 /* Editable Content */
@@ -151,9 +153,21 @@ nav .brand-logo {
     margin-top: auto;
 }
 
-.mdc-card {
-    margin: 16px;
+.card-container {
+    padding-left: 16px;
+    padding-right: 16px;
 }
+
+.mdc-card {
+    height: 148px;
+}
+
+.mdc-card header, 
+.mdc-card .flow-text {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 /* Colours */
 /*
 See here for a pallete generator: https://material.io/design/color/the-color-system.html#tools-for-picking-colors
