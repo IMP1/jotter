@@ -160,6 +160,7 @@ nav .brand-logo {
 
 .mdc-card {
     height: 148px;
+    margin-bottom: 16px;
 }
 
 .mdc-card header, 
