@@ -129,10 +129,9 @@ nav .brand-logo {
 }
 
 *[contenteditable="true"]::before {
-    font-family: "FontAwesome"; 
+    font-family: "Material Icons"; 
     font-weight: 400; 
-    content: "\f040";
-    transform: scaleX(-1);
+    content: "edit";
     width: 1rem;
     margin-right: 0.2rem;
     margin-left: 0.2rem;
