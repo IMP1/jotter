@@ -53,7 +53,7 @@ function add_note(list_element, note_data) {
 
     let body = document.createElement("div");
     body.classList.add("flow-text", "demo-card__secondary", "mdc-typography", "mdc-typography--body2", "white-text");
-    body.textContent = note_data.body;
+    body.textContent = note_data.content;
     content.appendChild(body);
 
     card.appendChild(content);
@@ -96,18 +96,25 @@ function add_note(list_element, note_data) {
     list_element.appendChild(card_container);
 }
 
-function setup_folder(node, list_element, node_data) {
-    for (i = 0; i < node.children.length; i ++) {
-        let child_node = node_data[node.children[i]];
-        add_note(list_element, child_node);
+function setup_folder(note, list_element) {
+    for (i = 0; i < note.children.length; i ++) {
+        make_cors_request(note.children[i], "application/json",
+            function(text) {
+                let child_note = JSON.parse(text);
+                add_note(list_element, child_note);
+            },
+            function() {
+                console.log("An error occured when trying to access the following URL: " + url);
+            },
+        );
     }
 }
 
-function setup_folder_container(node, container, node_data) {
+function setup_folder_container(container, note) {
     let folder = document.createElement("div");
     folder.classList.add("note-children", "row");
 
-    setup_folder(node, folder, node_data);
+    setup_folder(note, folder);
 
     container.appendChild(folder);
 }

@@ -1,4 +1,4 @@
-function setup_board(node, board_element, node_data) {
+function setup_board(board_element, node_data) {
     let node_children = [1]; // TODO: get from model somehow.
 
     // TODO: work out which nodes are lists and which are list items.
@@ -22,11 +22,11 @@ function setup_board(node, board_element, node_data) {
     }
 }
 
-function setup_board_container(node, container, node_data) {
+function setup_board_container(container, node_data) {
     let board = document.createElement("div");
     board.classList.add("board-layout", "note-children");
 
-    setup_board(node, board);
+    setup_board(board, node_data);
 
     container.appendChild(board);
 }

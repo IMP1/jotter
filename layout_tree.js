@@ -1,3 +1,5 @@
+let SVGNS = "http://www.w3.org/2000/svg";
+
 function setup_tree(node, tree_element, node_data) {
     let node_children = []; // TODO: get from model somehow.
 
