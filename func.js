@@ -37,8 +37,8 @@ function setup_note(note, parent) {
     body.textContent = note.content;
     note_container.appendChild(body);
 
-    document.getElementById("note-container").classList.add(LAYOUT_CLASSES[note.child_layout]);
-    LAYOUT_FUNCTIONS[note.child_layout](note_container, note);
+    document.getElementById("note-container").classList.add(LAYOUT_CLASSES[note.children_layout]);
+    LAYOUT_FUNCTIONS[note.children_layout](note_container, note);
 }
 
 function main() {
