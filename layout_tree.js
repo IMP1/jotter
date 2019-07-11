@@ -16,7 +16,7 @@ function add_node(tree_element, note, node) {
 function setup_tree(tree_element, note) {
 
     for (var i = 0; i < note.children_layout_data.nodes.length; i ++) {
-        let node = note.children_layour_data.nodes[i];
+        let node = note.children_layout_data.nodes[i];
         make_cors_request(node.note, "application/json",
             function(text) {
                 let child_note = JSON.parse(text);
