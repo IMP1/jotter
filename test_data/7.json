@@ -14,7 +14,7 @@
     ],
     "children_layout": 2,
     "children_layout_data": {
-        nodes = [
+        "nodes": [
             {
                 "note": "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/9.json",
                 "x": 10,
@@ -46,7 +46,7 @@
                 "colour": "#888"
             },
         ],
-        edges = [
+        "edges": [
         
         ]
     },
