@@ -45,7 +45,6 @@ function setup_note(note, parent) {
 function main() {
     let url = new URL(window.location.href);
     let note_url = url.searchParams.get("note");
-    // "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/1.json";
 
     make_cors_request(note_url, "application/json",
         function(text) {
