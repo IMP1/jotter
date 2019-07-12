@@ -18,9 +18,9 @@ function add_note(list_element, note_data) {
 
     // let child_layout_icon = document.createElement("li");
     // child_layout_icon.classList.add("material-icons");
-    // if (note_data.child_layout == 3) {
+    // if (note_data.children_layout == 3) {
     //     child_layout_icon.textContent = "dns";
-    // } else if (note_data.child_layout == 2) {
+    // } else if (note_data.children_layout == 2) {
     //     child_layout_icon.textContent = "timeline";
     // } else {
     //     child_layout_icon.textContent = "view_module";
@@ -29,11 +29,13 @@ function add_note(list_element, note_data) {
 
     let content_layout_icon = document.createElement("li");
     content_layout_icon.classList.add("material-icons");
-    if (note_data.content_layout == "character-sheet") {
-        content_layout_icon.textContent = "person";
-    } else if (note_data.child_layout == 3) {
+    if (note_data.content_layout == 3) {
+        content_layout_icon.textContent = "assignment_ind";
+    } else if (note_data.children_layout == 2) {
+        content_layout_icon.textContent = "assignment";
+    } else if (note_data.children_layout == 3) {
         content_layout_icon.textContent = "dns";
-    } else if (note_data.child_layout == 2) {
+    } else if (note_data.children_layout == 2) {
         content_layout_icon.textContent = "timeline";
     } else if (note_data.children.length > 0) {
         content_layout_icon.textContent = "folder";
@@ -112,7 +114,7 @@ function setup_folder(note, list_element) {
 
 function setup_folder_container(note_container, note) {
     note_container.classList.add("folder-container");
-    
+
     let folder = document.createElement("div");
     folder.classList.add("note-children", "row");
 
