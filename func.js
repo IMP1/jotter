@@ -26,6 +26,7 @@ function setup_note(note, parent) {
             );
         } else {
             console.log("using provided parent");
+            parent_link.getElementsByTagName("span")[0].textContent = parent.name;
         }
         parent_link.setAttribute("href", "?note=" + note.parent);
         parent_link.getElementsByTagName("i")[0].textContent = "subdirectory_arrow_left";
