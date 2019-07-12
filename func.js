@@ -1,8 +1,16 @@
-function setup_note(note, parent) {
+function setup_note_content(note_container, note) {
+    const CONTENT_FUNCTIONS = [null, setup_markdown_content, setup_input_form_content];
+    // TODO: use content_layout to determine how this is displayed.
+    CONTENT_FUNCTIONS[note.content_layout](note_container, note);
+}
 
-    const LAYOUT_CLASSES = [null, "folder-container", "tree-container", "board-container"];
+function setup_note_children(note_container, note) {
     const LAYOUT_FUNCTIONS = [null, setup_folder_container, setup_tree_container, setup_board_container];
+    // TODO: get layout function from the children_layout URL?
+    LAYOUT_FUNCTIONS[note.children_layout](note_container, note);
+}
 
+function setup_note(note, parent) {
     if (note.parent !== null) {
         // TODO: Redo breadcrumbs, rather than a link to just the parent?
         let parent_link = document.getElementsByClassName("note-parent")[0];
@@ -29,16 +37,8 @@ function setup_note(note, parent) {
 
     let note_container = document.getElementById("note-container");
 
-    // TODO: use content_layout to determine how this is displayed.
-    let body = document.createElement("section");
-    body.setAttribute("contenteditable", true);
-    body.classList.add("note-body");
-    body.classList.add("markdown");
-    body.textContent = note.content;
-    note_container.appendChild(body);
-
-    document.getElementById("note-container").classList.add(LAYOUT_CLASSES[note.children_layout]);
-    LAYOUT_FUNCTIONS[note.children_layout](note_container, note);
+    setup_note_content(note_container, note);
+    setup_note_children(note_container, note);
 }
 
 function main() {

@@ -22,11 +22,13 @@ function setup_board(board_element, node_data) {
     }
 }
 
-function setup_board_container(container, node_data) {
+function setup_board_container(note_container, note) {
+    note_container.classList.add("board-container");
+
     let board = document.createElement("div");
     board.classList.add("board-layout", "note-children");
 
-    setup_board(board, node_data);
+    setup_board(board, note);
 
-    container.appendChild(board);
+    note_container.appendChild(board);
 }

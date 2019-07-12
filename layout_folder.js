@@ -110,11 +110,13 @@ function setup_folder(note, list_element) {
     }
 }
 
-function setup_folder_container(container, note) {
+function setup_folder_container(note_container, note) {
+    note_container.classList.add("folder-container");
+    
     let folder = document.createElement("div");
     folder.classList.add("note-children", "row");
 
     setup_folder(note, folder);
 
-    container.appendChild(folder);
+    note_container.appendChild(folder);
 }
