@@ -15,30 +15,37 @@
     "content_layout_data": {
         "description": {
             "type": "text",
+            "label": "Description",
             "position": ["10px", "40px"]
         },
         "stat_str": {
             "type": "number",
+            "label": "Strength",
             "position": ["10px", "80px"]
         },
         "stat_dex": {
             "type": "number",
+            "label": "Dexterity",
             "position": ["10px", "120px"]
         },
         "stat_con": {
             "type": "number",
+            "label": "Constitution",
             "position": ["10px", "160px"]
         },
         "stat_int": {
             "type": "number",
+            "label": "Intelligence",
             "position": ["10px", "200px"]
         },
         "stat_wis": {
             "type": "number",
+            "label": "Wisdom",
             "position": ["10px", "240px"]
         },
         "stat_cha": {
             "type": "number",
+            "label": "Charisma",
             "position": ["10px", "280px"]
         }
     },
