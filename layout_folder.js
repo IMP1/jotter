@@ -31,7 +31,7 @@ function add_note(list_element, note_data) {
     content_layout_icon.classList.add("material-icons");
     if (note_data.content_layout == 3) {
         content_layout_icon.textContent = "assignment_ind";
-    } else if (note_data.children_layout == 2) {
+    } else if (note_data.content_layout == 2) {
         content_layout_icon.textContent = "assignment";
     } else if (note_data.children_layout == 3) {
         content_layout_icon.textContent = "dns";
