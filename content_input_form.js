@@ -3,10 +3,19 @@ function setup_input_form_content(note_container, note) {
     form.classList.add("note-body");
 
     for (key in note.content) {
+        let input_field = document.createElement("div");
+
         let input = document.createElement("input");
+        input.setAttribute("id", "note-content-" + key);
         input.setAttribute("type", note.content_layout_data[key].type);
         input.setAttribute("value", note.content[key]);
-        form.appendChild(input);
+        input_field.appendChild(input);
+
+        let label = document.createElement("label");
+        label.setAttribute("for", input.id);
+        input_field.appendChild(label);
+
+        form.appendChild(input_field);
     }
 
     note_container.appendChild(form);
