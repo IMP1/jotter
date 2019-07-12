@@ -13,7 +13,21 @@ function add_node(tree_element, note, node) {
     tree_element.appendChild(c);
 }
 
+function add_edge(tree_element, edge) {
+    let p = document.createElementNS(SVGNS, "path");
+    let path_string = "M " + edge.startX + " " + edge.startY;
+    path_string += " c " + edge.path.join(" ");
+    p.setAttributeNS(null, "d", path_string);
+    p.setAttributeNS(null, "style", "stroke: black; fill: none;");
+    tree_element.appendChild(p);
+}
+
 function setup_tree(tree_element, note) {
+
+    for (var i = 0; i < note.children_layout_data.edges.length; i ++) {
+        let edge = note.children_layout_data.edges[i];
+        add_edge(tree_element, edge);
+    }
 
     for (var i = 0; i < note.children_layout_data.nodes.length; i ++) {
         let node = note.children_layout_data.nodes[i];
@@ -28,7 +42,6 @@ function setup_tree(tree_element, note) {
             }
         );
     }
-    // TODO: add edges
     
 }
 
