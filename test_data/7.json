@@ -47,7 +47,36 @@
             }
         ],
         "edges": [
-        
+            {
+                "startX": -30,
+                "startY": 50,
+                "path": [40, 0, 0, 0, 40, 0]
+            },
+            {
+                "startX": 10,
+                "startY": 50,
+                "path": [40, 0, 0, 0, 40, 0]
+            },
+            {
+                "startX": 50,
+                "startY": 50,
+                "path": [40, 0, 0, -20, 40, -20]
+            },
+            {
+                "startX": 50,
+                "startY": 50,
+                "path": [50, 0, 0, 20, 50, 20]
+            },
+            {
+                "startX": 90,
+                "startY": 30,
+                "path": [50, 0, 0, 20, 50, 20]
+            },
+            {
+                "startX": 100,
+                "startY": 70,
+                "path": [40, 0, 0, -20, 40, -20]
+            }
         ]
     },
     "parent": "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/1.json"
