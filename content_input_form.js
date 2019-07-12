@@ -4,6 +4,7 @@ function setup_input_form_content(note_container, note) {
 
     for (key in note.content) {
         let input_field = document.createElement("div");
+        input_field.classList.add("input-field", "col");
 
         let input = document.createElement("input");
         input.setAttribute("id", "note-content-" + key);
