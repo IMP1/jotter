@@ -1,0 +1,49 @@
+{
+    "id": "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/13.json",
+    "author": 1,
+    "name": "Leslie Bluebottle",
+    "content": {
+        "description": "A young person with a heart of gold",
+        "stat_str": 12,
+        "stat_dex": 8,
+        "stat_con": 19,
+        "stat_int": 4,
+        "stat_wis": 7,
+        "stat_cha": 10
+    },
+    "content_layout": 2,
+    "content_layout_data": {
+        "description": {
+            "type": "text",
+            "position": ["10px", "40px"]
+        },
+        "stat_str": {
+            "type": "number",
+            "position": ["10px", "80px"]
+        },
+        "stat_dex": {
+            "type": "number",
+            "position": ["10px", "120px"]
+        },
+        "stat_con": {
+            "type": "number",
+            "position": ["10px", "160px"]
+        },
+        "stat_int": {
+            "type": "number",
+            "position": ["10px", "200px"]
+        },
+        "stat_wis": {
+            "type": "number",
+            "position": ["10px", "240px"]
+        },
+        "stat_cha": {
+            "type": "number",
+            "position": ["10px", "280px"]
+        }
+    },
+    "children": [],
+    "children_layout": 1,
+    "children_layout_data": {},
+    "parent": "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/8.json"
+}

@@ -1,8 +1,8 @@
 {
     "id": "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/7.json",
     "author": 1,
-    "name": "Plot Overview",
-    "content": "The general overview of the plot. Lorem ipsum blah de blah.",
+    "name": "Key Plot Points",
+    "content": "Main decisions to be made by the party.",
     "content_layout": 1,
     "content_layout_data": {},
     "children": [
