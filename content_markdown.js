@@ -6,3 +6,5 @@ function setup_markdown_content(note_container, note) {
     body.textContent = note.content;
     note_container.appendChild(body);
 }
+
+// TODO: add event listener for onchange and render markdown
