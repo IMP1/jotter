@@ -14,6 +14,7 @@ function setup_input_form_content(note_container, note) {
 
         let label = document.createElement("label");
         label.setAttribute("for", input.id);
+        label.textContent = key;
         input_field.appendChild(label);
 
         form.appendChild(input_field);
