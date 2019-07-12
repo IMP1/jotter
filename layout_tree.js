@@ -73,8 +73,6 @@ function setup_tree_container(note_container, note) {
 
     let svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    svg.setAttribute("width", "1000");
-    svg.setAttribute("height", "100");
     svg.classList.add("tree-layout", "note-children", "s12");
     note_container.appendChild(svg);
 
