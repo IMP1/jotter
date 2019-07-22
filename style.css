@@ -99,6 +99,10 @@ img.logo {
     margin-top: 4px;
 }
 
+.edit-btn {
+    background-color: #E06B5A;
+}
+
 nav .brand-logo {
     font-family: 'Tangerine', cursive;
     font-size: 4rem;
