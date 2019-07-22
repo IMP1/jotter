@@ -99,16 +99,32 @@ function add_note(list_element, note_data) {
 }
 
 function setup_folder(note, list_element) {
-    for (i = 0; i < note.children.length; i ++) {
+    let child_notes = {
+        notes: [],
+        loaded: 0,
+        size: note.children.length,
+    };
+    for (var i = 0; i < child_notes.size; i ++) {
+        let index = i;
         make_cors_request(note.children[i], "application/json",
             function(text) {
                 let child_note = JSON.parse(text);
-                add_note(list_element, child_note);
+                add_children(list_element, child_notes, child_note, index);
             },
             function() {
                 console.log("An error occured when trying to access the following URL: " + url);
             },
         );
+    }
+}
+
+function add_children(list_element, child_notes, child_note, index) {
+    child_notes.notes[index] = child_note;
+    child_notes.loaded += 1
+    if (child_notes.loaded == child_notes.size) {
+        for (var i = 0; i < child_notes.size; i ++) {
+            add_note(list_element, child_notes.notes[i]);
+        }
     }
 }
 
