@@ -69,6 +69,12 @@ function setup_tree_tooltip(svg) {
 }
 
 function setup_tree_container(note_container, note) {
+    let css = document.createElement("link");
+    css.rel  = 'stylesheet';
+    css.type = 'text/css';
+    css.href = "https://imp1.github.io/jotter/layout/tree.css";
+    document.head.appendChild(css);
+
     note_container.classList.add("tree-container");
 
     let svg = document.createElementNS(SVGNS, "svg");

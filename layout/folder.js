@@ -129,6 +129,12 @@ function add_children(list_element, child_notes, child_note, index) {
 }
 
 function setup_folder_container(note_container, note) {
+    let css = document.createElement("link");
+    css.rel  = 'stylesheet';
+    css.type = 'text/css';
+    css.href = "https://imp1.github.io/jotter/layout/folder.css";
+    document.head.appendChild(css);
+
     note_container.classList.add("folder-container");
 
     let folder = document.createElement("div");

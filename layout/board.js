@@ -23,6 +23,12 @@ function setup_board(board_element, node_data) {
 }
 
 function setup_board_container(note_container, note) {
+    let css = document.createElement("link");
+    css.rel  = 'stylesheet';
+    css.type = 'text/css';
+    css.href = "https://imp1.github.io/jotter/layout/board.css";
+    document.head.appendChild(css);
+
     note_container.classList.add("board-container");
 
     let board = document.createElement("div");
