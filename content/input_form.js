@@ -1,4 +1,10 @@
 function setup_input_form_content(note_container, note) {
+    let css = document.createElement("link");
+    css.rel  = 'stylesheet';
+    css.type = 'text/css';
+    css.href = "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/content/input_form.css";
+    document.head.appendChild(css);
+
     let form = document.createElement("section");
     form.classList.add("note-body");
     form.classList.add("input-form-container");
