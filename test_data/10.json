@@ -3,7 +3,7 @@
     "author": 1,
     "name": "The Mutiny",
     "content": "The crew, angered by a long trip with a pompous captain, decide they've had enough.",
-    "content_layout": 1,
+    "content_layout": "https://imp1.github.io/jotter/content/markdown.js",
     "content_layout_data": {},
     "children": [],
     "children_layout": 1,

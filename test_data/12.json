@@ -3,7 +3,7 @@
     "author": 1,
     "name": "For the Realm",
     "content": "The party decide to side with the captain and help them and the royal entourage defeat the crew.",
-    "content_layout": 1,
+    "content_layout": "https://imp1.github.io/jotter/content/markdown.js",
     "content_layout_data": {},
     "children": [],
     "children_layout": 1,

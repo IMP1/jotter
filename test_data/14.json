@@ -11,7 +11,7 @@
         "stat_wis": 7,
         "stat_cha": 10
     },
-    "content_layout": 2,
+    "content_layout": "https://imp1.github.io/jotter/content/input_form.js",
     "content_layout_data": {
         "description": {
             "type": "text",

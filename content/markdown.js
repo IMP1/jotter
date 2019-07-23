@@ -1,4 +1,4 @@
-function setup_markdown_content(note_container, note) {
+function setup_content(note_container, note) {
     let css = document.createElement("link");
     css.rel  = 'stylesheet';
     css.type = 'text/css';

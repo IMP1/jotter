@@ -3,7 +3,7 @@
     "author": 1,
     "name": "Plot Overview",
     "content": "The general overview of the plot. Lorem ipsum blah de blah.",
-    "content_layout": 1,
+    "content_layout": "https://imp1.github.io/jotter/content/markdown.js",
     "content_layout_data": {},
     "children": [],
     "children_layout": 1,

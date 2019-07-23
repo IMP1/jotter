@@ -1,7 +1,11 @@
 function setup_note_content(note_container, note) {
-    const CONTENT_FUNCTIONS = [null, setup_markdown_content, setup_input_form_content];
-    // TODO: use content_layout to determine how this is displayed.
-    CONTENT_FUNCTIONS[note.content_layout](note_container, note);
+    let script = document.createElement("script");
+    script.type = 'text/javascript';
+    script.src = note.content_layout;
+    script.onload = function() {
+        setup_content(note_container, note);
+    };
+    document.body.appendChild(script);
 }
 
 function setup_note_children(note_container, note) {

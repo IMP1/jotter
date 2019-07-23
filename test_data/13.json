@@ -3,7 +3,7 @@
     "author": 1,
     "name": "The Storm",
     "content": "The ship is struck by a voilent storm and is wrecked onto the rocks along the coast. The party is marooned along with the royalty.",
-    "content_layout": 1,
+    "content_layout": "https://imp1.github.io/jotter/content/markdown.js",
     "content_layout_data": {},
     "children": [],
     "children_layout": 1,

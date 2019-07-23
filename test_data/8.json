@@ -3,7 +3,7 @@
     "author": 1,
     "name": "Characters",
     "content": "The main NPCs throughout the world.",
-    "content_layout": 1,
+    "content_layout": "https://imp1.github.io/jotter/content/markdown.js",
     "content_layout_data": {},
     "children": [
         "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/14.json"
