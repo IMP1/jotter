@@ -5,12 +5,11 @@ function setup_content(note_container, note) {
     css.href = "https://imp1.github.io/jotter/content/markdown.css";
     document.head.appendChild(css);
     
-    let body = document.createElement("section");
+    let body = document.getElementById("note-content");
     body.setAttribute("contenteditable", true);
     body.classList.add("note-body");
     body.classList.add("markdown");
     body.textContent = note.content;
-    note_container.appendChild(body);
 }
 
 // TODO: add event listener for onchange and render markdown

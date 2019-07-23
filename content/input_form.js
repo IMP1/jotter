@@ -5,7 +5,7 @@ function setup_content(note_container, note) {
     css.href = "https://imp1.github.io/jotter/content/input_form.css";
     document.head.appendChild(css);
 
-    let form = document.createElement("section");
+    let form = document.getElementById("note-content");
     form.classList.add("note-body");
     form.classList.add("input-form-container");
     form.classList.add("row");
@@ -36,7 +36,5 @@ function setup_content(note_container, note) {
 
         form.appendChild(input_field);
     }
-
-    note_container.appendChild(form);
     // TODO: use content_layout_data to position input fields
 }
