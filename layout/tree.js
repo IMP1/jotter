@@ -68,7 +68,7 @@ function setup_tree_tooltip(svg) {
     // }
 }
 
-function setup_tree_container(note_container, note) {
+function setup_container(note_container, note) {
     let css = document.createElement("link");
     css.rel  = 'stylesheet';
     css.type = 'text/css';
@@ -77,10 +77,11 @@ function setup_tree_container(note_container, note) {
 
     note_container.classList.add("tree-container");
 
+    let container = document.getElementById("note-children");
     let svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    svg.classList.add("tree-layout", "note-children", "s12");
-    note_container.appendChild(svg);
+    svg.classList.add("tree-layout", "s12");
+    container.appendChild(svg);
 
     setup_tree(svg, note);
 

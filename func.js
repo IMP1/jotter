@@ -9,9 +9,13 @@ function setup_note_content(note_container, note) {
 }
 
 function setup_note_children(note_container, note) {
-    const LAYOUT_FUNCTIONS = [null, setup_folder_container, setup_tree_container, setup_board_container];
-    // TODO: get layout function from the children_layout URL?
-    LAYOUT_FUNCTIONS[note.children_layout](note_container, note);
+    let script = document.createElement("script");
+    script.type = 'text/javascript';
+    script.src = note.children_layout;
+    script.onload = function() {
+        setup_container(note_container, note);
+    };
+    document.body.appendChild(script);
 }
 
 function setup_note(note, parent) {

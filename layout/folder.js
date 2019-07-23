@@ -128,7 +128,7 @@ function add_children(list_element, child_notes, child_note, index) {
     }
 }
 
-function setup_folder_container(note_container, note) {
+function setup_container(note_container, note) {
     let css = document.createElement("link");
     css.rel  = 'stylesheet';
     css.type = 'text/css';
@@ -137,10 +137,7 @@ function setup_folder_container(note_container, note) {
 
     note_container.classList.add("folder-container");
 
-    let folder = document.createElement("div");
-    folder.classList.add("note-children", "row");
-
+    let folder = document.getElementById("note-children");
+    folder.classList.add("row");
     setup_folder(note, folder);
-
-    note_container.appendChild(folder);
 }

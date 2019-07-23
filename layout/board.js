@@ -22,7 +22,7 @@ function setup_board(board_element, node_data) {
     }
 }
 
-function setup_board_container(note_container, note) {
+function setup_container(note_container, note) {
     let css = document.createElement("link");
     css.rel  = 'stylesheet';
     css.type = 'text/css';
@@ -31,10 +31,7 @@ function setup_board_container(note_container, note) {
 
     note_container.classList.add("board-container");
 
-    let board = document.createElement("div");
-    board.classList.add("board-layout", "note-children");
-
+    let board = document.getElementById("note-children");
+    board.classList.add("board-layout");
     setup_board(board, note);
-
-    note_container.appendChild(board);
 }
