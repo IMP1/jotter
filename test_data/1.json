@@ -11,7 +11,7 @@
         "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/7.json",
         "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/8.json"
     ],
-    "children_layout": 1,
+    "children_layout": "https://imp1.github.io/jotter/layout/folder.js",
     "children_layout_data": {},
     "parent": null
 }
