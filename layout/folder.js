@@ -16,26 +16,15 @@ function add_note(list_element, note_data) {
     let icons = document.createElement("ul");
     icons.classList.add("note-card-icons");
 
-    // let child_layout_icon = document.createElement("li");
-    // child_layout_icon.classList.add("material-icons");
-    // if (note_data.children_layout == 3) {
-    //     child_layout_icon.textContent = "dns";
-    // } else if (note_data.children_layout == 2) {
-    //     child_layout_icon.textContent = "timeline";
-    // } else {
-    //     child_layout_icon.textContent = "view_module";
-    // }
-    // icons.appendChild(child_layout_icon);
-
     let content_layout_icon = document.createElement("li");
     content_layout_icon.classList.add("material-icons");
-    if (note_data.content_layout == 3) {
-        content_layout_icon.textContent = "assignment_ind";
-    } else if (note_data.content_layout == 2) {
+    if (note_data.content_layout == null) {
+        content_layout_icon.textContent = "help";
+    } else if (note_data.content_layout == "https://imp1.github.io/jotter/content/input_form.js") {
         content_layout_icon.textContent = "assignment";
-    } else if (note_data.children_layout == 3) {
+    } else if (note_data.children_layout == "https://imp1.github.io/jotter/layout/board.js") {
         content_layout_icon.textContent = "dns";
-    } else if (note_data.children_layout == 2) {
+    } else if (note_data.children_layout == "https://imp1.github.io/jotter/layout/tree.js") {
         content_layout_icon.textContent = "timeline";
     } else if (note_data.children.length > 0) {
         content_layout_icon.textContent = "folder";
