@@ -12,7 +12,7 @@
         "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/12.json",
         "https://raw.githubusercontent.com/IMP1/jotter/gh-pages/test_data/13.json"
     ],
-    "children_layout": 2,
+    "children_layout": "https://imp1.github.io/jotter/layout/tree.js",
     "children_layout_data": {
         "nodes": [
             {
