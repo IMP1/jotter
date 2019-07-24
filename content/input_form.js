@@ -31,6 +31,9 @@ function setup_content(note_container, note) {
 
         let label = document.createElement("label");
         label.setAttribute("for", input.id);
+        if (input.getAttribute("value")) {
+            label.classList.add("active");
+        }
         label.textContent = note.content_layout_data[key].label;
         input_field.appendChild(label);
 
