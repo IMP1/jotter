@@ -1,0 +1,24 @@
+{
+    "id": "",
+    "name": "",
+    "author": "",
+    "get_target": "",
+    "new_target": "",
+    "update_target": "",
+    "delete_target": "",
+}
+
+// New needs to create a resource and return a URL to it, to be the note's ID.
+// The API can decide that New needs credentials
+
+// Get needs to return the json object of the note, taking the note's ID
+// The API can decide that Get needs credentials
+
+// Update needs to change the content, taking the note's ID and fields and values to replace
+// The API can decide that Update needs credentials
+
+// "Credentials" can mean any additional data required to be passed with the request.
+
+// Where do these credentials get stored?
+// If you're self hosting the data and jotter, then it's probs fine. doesn't matter, doesn't have to see the outside world of the internet
+// but if you're using a jotter instance by me on gh-pages and storing stuff on gists, or google drive, where is the authentication taking place?
