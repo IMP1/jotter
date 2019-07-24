@@ -1,3 +1,21 @@
+function get_note_data(note, callback) {
+    
+}
+
+function new_note(parent_note, callback) {
+    console.log("creating new child note");
+}
+
+function update_note(note, new_data) {
+    console.log("updating note");
+    console.log(new_data);
+}
+
+function delete_note(note) {
+    // TODO: have a soft delete, which removes references to the note, but keeps the data.
+    //       and maybe saves the URL in a list of deleted notes somewhere.
+}
+
 function setup_note_content(note_container, note) {
     let script = document.createElement("script");
     script.type = 'text/javascript';
@@ -18,7 +36,10 @@ function setup_note_children(note_container, note) {
     document.body.appendChild(script);
 }
 
+let current_note = null;
+
 function setup_note(note, parent) {
+    current_note = note;
     if (note.parent !== null) {
         // TODO: Redo breadcrumbs, rather than a link to just the parent?
         let parent_link = document.getElementsByClassName("note-parent")[0];
@@ -50,6 +71,24 @@ function setup_note(note, parent) {
     setup_note_children(note_container, note);
 }
 
+function setup_page() {
+    $('.fixed-action-btn').floatingActionButton();
+    $('#fab-new-child').click(function() {
+        let note = current_note;
+        new_note(note, function() {
+            
+        });
+    });
+    $('#fab-child-layout').click(function() {
+        let note = current_note;
+        update_note(note, {"children_layout": "new_layout"});
+    });
+    $('#fab-content-layout').click(function() {
+        let note = current_note;
+        update_note(note, {"content_layout": "new_layout"});
+    });
+}
+
 function main() {
     let url = new URL(window.location.href);
     let note_url = url.searchParams.get("note");
@@ -57,8 +96,8 @@ function main() {
     make_cors_request(note_url, "application/json",
         function(text) {
             let node_data = JSON.parse(text);
-            console.log(text);
             setup_note(node_data);
+            setup_page();
         },
         function() {
             console.log("An error occured when trying to access the following URL: " + url);
@@ -68,5 +107,4 @@ function main() {
 
 $(document).ready(function(){
     main();
-    $('.fixed-action-btn').floatingActionButton();
 });
